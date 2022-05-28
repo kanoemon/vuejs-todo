@@ -10,6 +10,19 @@ const app = new Vue({
     ]
   },
   methods: {
+    doAdd: function(event, value) {
+      var comment = this.$refs.comment
+      if (!comment.value.length) {
+        return
+      }
 
+      this.todos.push({
+        id: 3,
+        comment: comment.value,
+        state: 0
+      })
+
+      comment.value = ''
+    }
   }
 })
